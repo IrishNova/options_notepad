@@ -1,0 +1,40 @@
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+
+# Python bytecode / caches
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Jupyter
+.ipynb_checkpoints/
+*/.ipynb_checkpoints/
+
+# Distribution / build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Environment / secrets
+.env
+.env.*
+*.local
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# IDE — keep PyCharm project settings out of a public repo
+.idea/
+.vscode/
+
+# Scratch data (uncomment if you drop local data files in here)
+# *.csv
+# *.parquet

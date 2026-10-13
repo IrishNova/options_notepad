@@ -1,0 +1,21 @@
+# Core numeric / data stack
+numpy
+pandas
+scipy
+
+# Plotting
+matplotlib
+seaborn
+
+# Options-specific: Black-Scholes pricing, implied vol, greeks
+py_vollib
+
+# Stats / modeling
+statsmodels
+
+# Market data (handy for quick experiments)
+yfinance
+
+# Notebook / interactive tinkering
+jupyterlab
+ipykernel
