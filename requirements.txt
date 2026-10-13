@@ -6,6 +6,7 @@ scipy
 # Plotting
 matplotlib
 seaborn
+PyQt5          # interactive GUI backend for matplotlib windows (sliders, live plots)
 
 # Options-specific: Black-Scholes pricing, implied vol, greeks
 py_vollib
