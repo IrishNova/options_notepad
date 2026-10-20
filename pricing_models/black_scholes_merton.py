@@ -30,6 +30,14 @@ def call_price(S, K, r, tau, d1, d2):
 
 
 def d1(S, K, r, tau, sigma):
+    """The upper z-score: how far spot sits ABOVE the strike, measured in
+    bell-widths (sigma*sqrt(tau)), after tilting the center up by the drift
+    (r + 1/2 sigma^2)*tau.
+
+    It answers: "how many standard deviations is the strike from today's
+    drift-adjusted price?" Run through N(), it becomes delta = N(d1) -- the
+    slope of the price curve, i.e. the shares to hold to replicate the call.
+    """
     return ((math.log(S/K)                  # gap to strike, in log terms
             + (r + 0.5 * sigma**2) * tau)   # the drift (risk-free growth r plus the log normal nudge)
             / (sigma * math.sqrt(tau)))     # the bell width
