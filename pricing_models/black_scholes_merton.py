@@ -48,6 +48,18 @@ def d2(S, K, r, tau, sigma):
     return d1(S, K, r, tau, sigma) - sigma * math.sqrt(tau)
 
 
+def delta(S, K, r, tau, sigma):
+    """Delta = N(d1): the slope of the price curve. Shares to hold per option,
+    and how many dollars the call moves per $1 move in the stock. Lives in 0..1."""
+    return N(d1(S, K, r, tau, sigma))
+
+
+def gamma(S, K, r, tau, sigma):
+    """Gamma = how fast delta changes per $1 move in the stock (delta's slope,
+    price's curvature). Highest near the strike, fades deep ITM/OTM."""
+    return phi(d1(S, K, r, tau, sigma)) / (S * sigma * math.sqrt(tau))
+
+
 if __name__ == "__main__":
     # single source of truth: our base z-score range, -3 to 3 inclusive.
     # everything below flows from this one array.
