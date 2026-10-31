@@ -60,6 +60,14 @@ def gamma(S, K, r, tau, sigma):
     return phi(d1(S, K, r, tau, sigma)) / (S * sigma * math.sqrt(tau))
 
 
+def vega(S, K, r, tau, sigma):
+    """Vega = how much the option's PRICE changes per unit change in volatility
+    (dPrice/dsigma). This is per 1.00 of sigma; divide by 100 for the usual
+    "$ per 1 vol point" trader quote. Peaks ATM, grows with sqrt(tau) -- more
+    time to expiry = more vega. Same for calls and puts."""
+    return S * phi(d1(S, K, r, tau, sigma)) * math.sqrt(tau)
+
+
 if __name__ == "__main__":
     # single source of truth: our base z-score range, -3 to 3 inclusive.
     # everything below flows from this one array.
