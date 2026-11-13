@@ -1,0 +1,10 @@
+section,label,value,note
+base_case,deviations,"+1,-1,+1,-1",four simple integer deviations from center
+base_case,simple_mean,0,"(+1-1+1-1)/4 = 0  -> signs cancel, useless"
+base_case,squared_each,"1,1,1,1",square kills the sign (direction-blind magnitude)
+base_case,mean_of_squares,1,(1+1+1+1)/4 = 1  = variance
+base_case,sqrt_of_that,1,"√1 = 1  = RMS / standard deviation (correct spread)"
+why_sqrt_t,steps_1,1,variance = 1            -> distance √1 = 1
+why_sqrt_t,steps_4,4,variance = 1+1+1+1 = 4  -> distance √4 = 2
+why_sqrt_t,steps_9,9,variance = 9            -> distance √9 = 3
+why_sqrt_t,rule,distance = sqrt(t),"variance adds linearly; distance is its square root"
